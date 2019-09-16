@@ -1,15 +1,13 @@
 import styled from 'styled-components'
 
-import { DisabledCSS, SharedCSS } from './Shared'
+import { InputCss } from './base/InputCss'
 import { forms } from 'Variables'
 
 export const Textarea = styled.textarea`
-  ${SharedCSS}
+  ${InputCss}
 
   height: inherit;
   min-height: ${forms.textarea.minHeight};
 
-  ${({ disabled }) => disabled && `${DisabledCSS}`}
-
-  ${({ fullWidth }) => fullWidth && `grid-column: 1 / -1;`}
+  ${props => props.fullWidth && `grid-column: 1 / -1;`}
 `

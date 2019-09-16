@@ -88,7 +88,9 @@ export const Input = props => {
   }
 
   // IconLeft
-  const IconLeft = iconLeft && Icon
+  const IconLeft = iconLeft ? Icon : React.Fragment
+
+  // const IconLeft = Icon
   const iconLeftProps = {
     icon: iconLeft,
     side: 'left',
@@ -116,21 +118,31 @@ export const Input = props => {
 
   return (
     <Field {...fieldProps}>
-      {/* {!noLabels && <Label {...labelProps}>{labelChildren}</Label>} */}
-      {/* {before && <Control {...beforeProps}> {before}</Control>} */}
       <Label {...labelProps}>{labelChildren}</Label>
-      <ControlBefore {...beforeProps}>{before}</ControlBefore>
       <Control {...controlProps}>
         <InputComponent {...inputProps} />
         <IconLeft {...iconLeftProps} />
-        <IconRight {...iconRightProps} />
-        {/* {iconLeft && <Icon icon={iconLeft} side="left" />}
-        {iconRight && <Icon icon={iconRight} side="right" />} */}
-        <Message {...messageProps}>{message}</Message>
-        {/* {message && <Help {...props}>{message}</Help>} */}
       </Control>
-      <ControlAfter {...afterProps}>{after}</ControlAfter>
-      {/* {after && <Control {...afterProps}>{after}</Control>} */}
     </Field>
   )
+
+  // return (
+  //   <Field {...fieldProps}>
+  //     {/* {!noLabels && <Label {...labelProps}>{labelChildren}</Label>} */}
+  //     {/* {before && <Control {...beforeProps}> {before}</Control>} */}
+  //     <Label {...labelProps}>{labelChildren}</Label>
+  //     <ControlBefore {...beforeProps}>{before}</ControlBefore>
+  //     <Control {...controlProps}>
+  //       <InputComponent {...inputProps} />
+  //       <IconLeft {...iconLeftProps} />
+  //       <IconRight {...iconRightProps} />
+  //       {/* {iconLeft && <Icon icon={iconLeft} side="left" />}
+  //       {iconRight && <Icon icon={iconRight} side="right" />} */}
+  //       <Message {...messageProps}>{message}</Message>
+  //       {/* {message && <Help {...props}>{message}</Help>} */}
+  //     </Control>
+  //     <ControlAfter {...afterProps}>{after}</ControlAfter>
+  //     {/* {after && <Control {...afterProps}>{after}</Control>} */}
+  //   </Field>
+  // )
 }

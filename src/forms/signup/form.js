@@ -8,7 +8,7 @@ import {
   TextInput as Text,
   Email,
   Password,
-} from 'Components/Forms'
+} from 'Components/Forms__OLD'
 
 export const FormComp = props => {
   const {

@@ -7,18 +7,21 @@ import {
   TextInput as Text,
   Email,
   Password,
-} from 'Components/Forms/Bulma'
+} from 'Components/Forms'
 
 import { MainLayout } from 'Layouts'
 
 export const CustomForm = props => {
   return (
     <form>
-      <Text name="Name" before="i am before" />
-      <Email name="Email" />
-      <Password name="pw" />
-      <Password name="pwConfirm" />
-      <Button type="submit">Submit</Button>
+      <Text name="name" />
     </form>
+    // <form>
+    //   <Text name="Name" before="i am before" />
+    //   <Email name="Email" />
+    //   <Password name="pw" />
+    //   <Password name="pwConfirm" />
+    //   <Button type="submit">Submit</Button>
+    // </form>
   )
 }

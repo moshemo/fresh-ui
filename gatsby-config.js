@@ -52,11 +52,12 @@ module.exports = {
         Assets: path.join(__dirname, 'src/assets'),
         Components: path.join(__dirname, 'src/components'),
         Config: path.join(__dirname, 'src/config'),
+        Forms: path.join(__dirname, 'src/forms'),
         Layouts: path.join(__dirname, 'src/layouts'),
         Pages: path.join(__dirname, 'src/pages'),
         Plugins: path.join(__dirname, 'src/plugins'),
         Styles: path.join(__dirname, 'src/styles'),
-        Utilities: path.join(__dirname, 'src/utilities'),
+        Utils: path.join(__dirname, 'src/utils'),
 
         // Assets
         Images: path.join(__dirname, 'src/assets/img'),
@@ -72,10 +73,10 @@ module.exports = {
         Variables: path.join(__dirname, 'src/styles/variables'),
 
         // Utilities
-        Classes: path.join(__dirname, 'src/utilities/classes'),
-        Context: path.join(__dirname, 'src/utilities/context'),
-        Functions: path.join(__dirname, 'src/utilities/functions'),
-        Hooks: path.join(__dirname, 'src/utilities/hooks'),
+        Classes: path.join(__dirname, 'src/utils/classes'),
+        Context: path.join(__dirname, 'src/utils/context'),
+        Functions: path.join(__dirname, 'src/utils/functions'),
+        Hooks: path.join(__dirname, 'src/utils/hooks'),
       },
     },
     {
