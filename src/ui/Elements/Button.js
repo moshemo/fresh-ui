@@ -41,7 +41,7 @@ export const Button = styled('button')`
     background-color: rgba(0,0,0,.5);
   }
 
-  ${({ disabled }) => disabled} { cursor: not-allowed;}
+  ${({ disabled }) => disabled && `cursor: not-allowed;`}
 
   ${color}
   ${fontSize}

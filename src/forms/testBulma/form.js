@@ -8,7 +8,8 @@ export const CustomForm = props => {
   return (
     <form>
       <Input name="name" />
-      <Text name="city" />
+      <Text name="search" addonRight={<Button>Search</Button>} />
+      <Text name="search" addonLeft={<Button bg="secondary">Test</Button>} />
       <Email name="Email" iconLeft="envelope" iconRight="check" />
       <Password name="pw" />
       <Password name="pwConfirm" />

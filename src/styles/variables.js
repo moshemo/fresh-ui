@@ -169,7 +169,7 @@ export const forms = {
     color: colors.greyDark,
   },
   icon: {
-    color: '#dbdbdb',
+    color: colors.grey,
   },
   input: {
     backgroundColor: colors.white,

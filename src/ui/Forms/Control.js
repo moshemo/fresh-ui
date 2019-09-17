@@ -1,7 +1,12 @@
 import styled from 'styled-components'
 
-import { InputIconBase, StyledInput, FormikInput } from 'UI'
+import { RegInput, FormikInput } from './Input'
+
+import { Button } from 'UI'
 import { forms } from 'Variables'
+
+console.log('RegInput: ', RegInput)
+console.log('Button: ', Button)
 
 // prettier-ignore
 export const Control = styled.div`
@@ -12,12 +17,47 @@ export const Control = styled.div`
   text-align: left;
 
   ${({ iconLeft }) => iconLeft && `
-    ${StyledInput},
+    ${RegInput},
     ${FormikInput} { padding-left: ${forms.input.height}; }
   `}
 
   ${({ iconRight }) => iconRight && `
-  ${StyledInput},
+    ${RegInput},
     ${FormikInput} { padding-right: ${forms.input.height}; }
     `}
+
+  ${({ addonLeft }) => addonLeft && `
+    display: flex;
+    justify-content: flex-start;
+    height: ${forms.input.height};
+
+    ${RegInput},
+    ${FormikInput} {
+      order: 1;
+    }
+
+    ${Button},
+    select {
+      margin-right: -2px;
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+      order: 0;
+    }
+
+
+  `}
+
+  ${({ addonRight }) => addonRight && `
+    display: flex;
+    justify-content: flex-start;
+    height: ${forms.input.height};
+
+    ${Button},
+    select {
+      margin-left: -2px;
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+    }
+
+  `}
 `

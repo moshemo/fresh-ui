@@ -22,6 +22,22 @@ export const Field = styled.div`
     ${({right}) => right && `justify-content: flex-end;`}
 
     ${Control} {
+      :not(:last-child) { margin-right: -1px; }
+
+      :first-child:not(:only-child) {
+        ${Input},
+        ${FormikInput} {
+          border-bottom-right-radius: 0;
+          border-top-right-radius: 0;
+      }
+
+      :last-child:not(:only-child) {
+        ${Input},
+        ${FormikInput} {
+          border-bottom-left-radius: 0;
+          border-top-left-radius: 0;
+      }
+
       ${({ expanded }) => expanded && `
         flex-grow: 1;
         flex-shrink: 1;
