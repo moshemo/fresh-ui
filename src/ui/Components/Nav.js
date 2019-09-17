@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 
-import { Container } from 'Components'
+import { Container } from 'UI'
 import { colors } from 'Variables'
 
 export const NavBase = styled.nav`

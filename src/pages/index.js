@@ -7,6 +7,7 @@ import React from 'react'
 // import { useValidation } from 'Hooks'
 // import { useValidation } from 'Hooks'
 import { MainLayout } from 'Layouts'
+import { TestBulmaForm } from 'Forms/testBulma'
 // import { MainLayout } from 'Layouts'
 
 // const initialValues = {
@@ -21,6 +22,7 @@ const HomePage = () => {
   return (
     <MainLayout>
       <h1>SignUp</h1>
+      <TestBulmaForm />
       {/* <Form>
         <TextInput
           autoComplete="off"

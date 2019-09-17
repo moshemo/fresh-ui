@@ -1,7 +1,6 @@
 import React from 'react'
 
-import { NavBase, NavLink } from 'Components'
-import { Text, Title } from 'Elements'
+import { NavBase, NavLink, Text, Title } from 'UI'
 
 import {
   MdDashboard as DashboardIcon,

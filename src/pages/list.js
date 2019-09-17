@@ -1,10 +1,7 @@
 import React from 'react'
 
-import { Card, CardTitle, List, ListItem } from 'Components'
-import { Text } from 'Elements'
-import { Start, End } from 'Structure'
-
 import { MainLayout } from 'Layouts'
+import { Card, CardTitle, List, ListItem, Start, End, Text } from 'UI'
 import { colors } from 'Variables'
 
 const ListPage = () => {

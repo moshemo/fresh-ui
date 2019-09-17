@@ -1,8 +1,10 @@
 import styled from 'styled-components'
+
 import { Control } from './Control'
 import { Input, FormikInput } from './Input'
 import { Label } from './Label'
-import { Button } from 'Components'
+
+import { Button } from 'UI'
 import { forms } from 'Variables'
 
 /* prettier-ignore */

@@ -1,10 +1,10 @@
 import React from 'react'
 
-import { NavBase } from 'Components'
-import { End, Start } from 'Structure'
 // import { SignedIn, SignedOut } from './header-links'
 import { HeaderLinks } from './header-links'
 import { HeaderBase, HeaderInner } from './header-styles'
+
+import { NavBase, Start, End } from 'UI'
 
 export const Header = props => {
   return (

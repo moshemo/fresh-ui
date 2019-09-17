@@ -2,11 +2,9 @@ import React, { useState } from 'react'
 import { navigate } from 'gatsby'
 
 import { firebase } from 'Classes'
-import { NavBase, NavLink } from 'Components'
-import { Button } from 'Elements'
-import { NavBase, NavLink } from 'Structure'
 import { useForms } from 'Hooks'
 import { LoginLayout } from 'Layouts'
+import { Button, Flex, NavBase, NavLink } from 'UI'
 
 const INITIAL_VALUES = {
   loginEmail: '',

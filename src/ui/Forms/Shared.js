@@ -64,7 +64,6 @@ export const DisabledCSS = css`
 
 // prettier-ignore
 export const InputCSS = css`
-  ${SharedCSS};
 
 ${({iconLeft}) => iconLeft && `padding-left: 2.25em;`}
 ${({iconRight}) => iconRight && `padding-right: 2.25em;`}

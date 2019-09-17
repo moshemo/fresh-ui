@@ -1,9 +1,8 @@
 import React from 'react'
 
-import { Text } from 'Elements'
-import { Container } from 'Structure'
 import { FooterBase } from './footer-styles'
 import { CurrentYear } from 'Functions'
+import { Container, Text } from 'UI'
 
 export const Footer = () => (
   <FooterBase>

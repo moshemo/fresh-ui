@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 
 import { FirebaseContext } from 'Context'
-import { NavLink } from 'Components'
+import { NavLink } from 'UI'
 
 export const HeaderLinks = () => {
   const { firebase, user } = useContext(FirebaseContext)

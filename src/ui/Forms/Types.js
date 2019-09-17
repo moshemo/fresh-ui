@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Input } from './index'
+import { Input } from './Input'
 
 export const Date = props => <Input type="date" {...props} />
 export const DateTimeLocal = props => (

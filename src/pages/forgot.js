@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 
 import { firebase } from 'Classes'
-import { Button } from 'Elements'
 // import { FirebaseContext } from 'Context'
 import { MainLayout } from 'Layouts'
+import { Button } from 'UI'
 
 const ForgotPasswordPage = () => {
   const [accountEmail, setAccountEmail] = useState('')

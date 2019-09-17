@@ -51,6 +51,7 @@ module.exports = {
         // Main Folders
         Assets: path.join(__dirname, 'src/assets'),
         Config: path.join(__dirname, 'src/config'),
+        Forms: path.join(__dirname, 'src/forms'),
         Layouts: path.join(__dirname, 'src/layouts'),
         Pages: path.join(__dirname, 'src/pages'),
         Plugins: path.join(__dirname, 'src/plugins'),
@@ -74,7 +75,6 @@ module.exports = {
         // UI
         Components: path.join(__dirname, 'src/ui/components'),
         Elements: path.join(__dirname, 'src/ui/elements'),
-        Forms: path.join(__dirname, 'src/ui/forms'),
         Structure: path.join(__dirname, 'src/ui/structure'),
 
         // Utils

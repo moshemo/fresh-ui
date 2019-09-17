@@ -1,7 +1,7 @@
-import styled, { css } from 'styled-components'
-import { Field as FormikField } from 'formik'
+import styled from 'styled-components'
+// import { Field as FormikField } from 'formik'
 
-import { Icon } from 'Components'
+import { Icon } from 'UI'
 import { forms } from 'Variables'
 
 export const InputIcon = styled(Icon)`

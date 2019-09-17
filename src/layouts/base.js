@@ -7,7 +7,7 @@ import { FormProvider } from 'Context'
 import GlobalCss from 'Global'
 import theme from 'Theme'
 
-import { iconLibrary } from 'Styles/icons'
+// import { iconLibrary } from 'Styles/icons'
 
 export const BaseLayout = ({ children }) => {
   // const { firebase } = useContext(FirebaseContext)

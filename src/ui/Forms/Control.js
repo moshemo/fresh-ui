@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { Icon } from 'Components'
+
+import { Icon } from 'UI'
 import { forms } from 'Variables'
 
 // prettier-ignore
