@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Field as FormikField } from 'formik'
 import startCase from 'lodash/startCase'
 
 import { Control } from './Control'
 import { Field } from './Field'
 import { Help } from './Help'
-import { InputIcon as Icon } from './Icon'
+import { InputIcon } from './Icon'
 // import { Label as LabelComponent } from './Label'
 import { Label } from './Label'
 import { InputCSS, SharedCSS } from './Shared'
@@ -15,13 +15,12 @@ import { FormContext } from 'Context/FormContext'
 import { forms } from 'Variables'
 
 export const StyledInput = styled.input`
-  ${SharedCSS}
-  ${InputCSS}
+  background-color: beige;
+  height: 350px;
 `
 
 export const FormikInput = styled(FormikField)`
-  ${SharedCSS}
-  ${InputCSS}
+  background: red;
 `
 
 export const Input = props => {
@@ -98,10 +97,6 @@ export const Input = props => {
       horizontal,
       radio,
     },
-    before: {
-      before,
-      ...props,
-    },
     control: {
       iconLeft,
       iconRight,
@@ -119,7 +114,6 @@ export const Input = props => {
       success,
       warning,
     },
-    after: { after: after, ...props },
   }
 
   const labelChildren = label ? label : titleCase
@@ -129,14 +123,14 @@ export const Input = props => {
   return (
     <Field {...pv.field}>
       {!noLabels && <Label {...pv.label}>{labelChildren}</Label>}
-      {before && <Control {...pv.before}> {before}</Control>}
+      {before && <Control before="before"> {before}</Control>}
       <Control {...pv.control}>
         <InputComponent {...pv.input} />
-        {iconLeft && <Icon icon={iconLeft} side="left" />}
-        {iconRight && <Icon icon={iconRight} side="right" />}
+        {iconLeft && <InputIcon icon={iconLeft} side="left" />}
+        {iconRight && <InputIcon icon={iconRight} side="right" />}
         {message && <Help {...pv.message}>{message}</Help>}
       </Control>
-      {after && <Control {...pv.after}>{after}</Control>}
+      {after && <Control after="after">{after}</Control>}
     </Field>
   )
 }

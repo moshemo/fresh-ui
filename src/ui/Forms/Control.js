@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { Icon } from 'UI'
+import { InputIconBase, StyledInput, FormikInput } from 'UI'
 import { forms } from 'Variables'
 
 // prettier-ignore
@@ -12,11 +12,12 @@ export const Control = styled.div`
   text-align: left;
 
   ${({ iconLeft }) => iconLeft && `
-    padding-left: ${forms.input.height};
-    ${Icon} { left: 0;}
+    ${StyledInput},
+    ${FormikInput} { padding-left: ${forms.input.height}; }
   `}
 
   ${({ iconRight }) => iconRight && `
-    padding-right: ${forms.input.height};
-    ${Icon} { right: 0; }`}
+  ${StyledInput},
+    ${FormikInput} { padding-right: ${forms.input.height}; }
+    `}
 `

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-import { Button } from 'Components'
+import { Button } from 'UI'
 import { forms } from 'Variables'
 
 export const InputBase = styled.div`

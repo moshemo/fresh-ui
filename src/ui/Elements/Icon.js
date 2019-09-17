@@ -1,9 +1,11 @@
+import React from 'react'
 import styled from 'styled-components'
+import { FontAwesomeIcon as FaIcon } from 'FontAwesome'
 
 import { colors } from 'Variables'
 
 // prettier-ignore
-export const Icon = styled.span`
+export const IconBase = styled.span`
   align-items: center;
   display: inline-flex;
   justify-content: center;
@@ -23,3 +25,9 @@ export const Icon = styled.span`
       if (large)  { return `height: 3rem; width: 3rem;` } 
   }};
 `
+
+const InputIcon = props => (
+  <IconBase>
+    <FaIcon icon={props.icon} {...props} />
+  </IconBase>
+)

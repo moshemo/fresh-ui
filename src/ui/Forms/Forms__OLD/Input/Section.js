@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { Button } from 'Components'
+import { Button } from 'UI'
 import { colors } from 'Variables'
 
 // prettier-ignore
