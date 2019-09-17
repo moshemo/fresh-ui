@@ -50,13 +50,12 @@ module.exports = {
 
         // Main Folders
         Assets: path.join(__dirname, 'src/assets'),
-        Components: path.join(__dirname, 'src/components'),
         Config: path.join(__dirname, 'src/config'),
-        Forms: path.join(__dirname, 'src/forms'),
         Layouts: path.join(__dirname, 'src/layouts'),
         Pages: path.join(__dirname, 'src/pages'),
         Plugins: path.join(__dirname, 'src/plugins'),
         Styles: path.join(__dirname, 'src/styles'),
+        UI: path.join(__dirname, 'src/ui'),
         Utils: path.join(__dirname, 'src/utils'),
 
         // Assets
@@ -72,7 +71,13 @@ module.exports = {
         Theme: path.join(__dirname, 'src/styles/theme'),
         Variables: path.join(__dirname, 'src/styles/variables'),
 
-        // Utilities
+        // UI
+        Components: path.join(__dirname, 'src/ui/components'),
+        Elements: path.join(__dirname, 'src/ui/elements'),
+        Forms: path.join(__dirname, 'src/ui/forms'),
+        Structure: path.join(__dirname, 'src/ui/structure'),
+
+        // Utils
         Classes: path.join(__dirname, 'src/utils/classes'),
         Context: path.join(__dirname, 'src/utils/context'),
         Functions: path.join(__dirname, 'src/utils/functions'),

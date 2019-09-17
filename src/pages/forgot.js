@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import { firebase } from 'Classes'
-import { Button } from 'Components'
+import { Button } from 'Elements'
 // import { FirebaseContext } from 'Context'
 import { MainLayout } from 'Layouts'
 

@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
-import { NavBase, NavLink, Text } from 'Components'
+import { NavBase, NavLink } from 'Components'
+import { Text } from 'Elements'
 import { colors } from 'Variables'
 
 export const SidebarBase = styled.div`

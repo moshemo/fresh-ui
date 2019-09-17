@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import Form from 'react-jsonschema-form'
 
 import { firebase } from 'Classes'
-import { Button, Flex } from 'Components'
+import { Button } from 'Elements'
+import { Flex } from 'Structure'
 import { useForms } from 'Hooks'
 import { MainLayout } from 'Layouts'
 

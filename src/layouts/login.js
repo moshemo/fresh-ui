@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { BaseLayout } from './base'
-import { Grid } from 'Components'
+import { Grid } from 'Structure'
 import { colors } from 'Variables'
 
 export const LoginLayout = ({ children }) => {

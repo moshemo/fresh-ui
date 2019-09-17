@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { End, Start, NavBase } from 'Components'
+import { NavBase } from 'Components'
+import { End, Start } from 'Structure'
 // import { SignedIn, SignedOut } from './header-links'
 import { HeaderLinks } from './header-links'
 import { HeaderBase, HeaderInner } from './header-styles'

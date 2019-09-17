@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { Text } from 'Components'
+import { Text } from 'Elements'
 import { colors } from 'Variables'
 
 export const FooterBase = styled.footer`

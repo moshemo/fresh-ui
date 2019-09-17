@@ -1,6 +1,9 @@
 import React from 'react'
 
-import { Card, CardTitle, List, ListItem, Start, End, Text } from 'Components'
+import { Card, CardTitle, List, ListItem } from 'Components'
+import { Text } from 'Elements'
+import { Start, End } from 'Structure'
+
 import { MainLayout } from 'Layouts'
 import { colors } from 'Variables'
 

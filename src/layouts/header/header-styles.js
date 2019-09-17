@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { Container } from 'Components'
+import { Container } from 'Structure'
 import { colors } from 'Variables'
 
 export const HeaderBase = styled.header`

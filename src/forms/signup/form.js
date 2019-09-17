@@ -1,14 +1,14 @@
 import React from 'react'
 import { ErrorMessage } from 'formik'
 
-import { Button } from 'Components'
+import { Button } from 'Elements'
 import {
   Form,
   Input,
   TextInput as Text,
   Email,
   Password,
-} from 'Components/Forms__OLD'
+} from 'Forms/Forms__OLD'
 
 export const FormComp = props => {
   const {

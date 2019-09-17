@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { Container, Text } from 'Components'
+import { Text } from 'Elements'
+import { Container } from 'Structure'
 import { FooterBase } from './footer-styles'
 import { CurrentYear } from 'Functions'
 
