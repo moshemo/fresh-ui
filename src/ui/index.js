@@ -12,6 +12,8 @@ export * from './Elements/Text'
 export * from './Elements/Video'
 
 // Forms
+export * from './Forms/Form'
+export * from './Forms/Group'
 export * from './Forms/Input'
 export * from './Forms/Textarea'
 export * from './Forms/Types'

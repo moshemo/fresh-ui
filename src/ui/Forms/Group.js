@@ -1,28 +1,15 @@
 import styled from 'styled-components'
-import { Control } from './Control'
+import { grid } from 'styled-system'
 
-// prettier-ignore
-export const FormGroup = styled.div`
-  ${({center}) => center && `justify-content: center;`}
-  ${({right}) => right && `justify-content: flex-end;`}
+export const Group = styled.div`
+  display: grid;
+  grid-gap: 0 12px;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(${props => (props.autoFit ? props.autoFit : '200px')}, 1fr)
+  );
 
-  ${({wrap}) => wrap && `
-    flex-wrap: wrap;
-    :last-child { margin-bottom: -.75rem; }
-    ${Control} { margin-bottom: .75rem; }
-  `}
+  margin-bottom: 1em;
 
-  > ${Control} {
-    flex-shrink: 0;
-
-    :not(:last-child) {
-      margin-bottom: 0;
-      margin-right: 0.75rem;
-    }
-
-    ${({expanded}) => expanded && `
-      flex-grow: 1;
-      flex-shrink: 1;
-    `}
-  }
+  ${grid}
 `

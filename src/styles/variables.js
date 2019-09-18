@@ -163,10 +163,10 @@ export const forms = {
     borderRadius: '0',
   },
   disabled: {
-    backgroundColor: colors.light,
-    borderColor: colors.light,
+    backgroundColor: colors.greyDark,
+    borderColor: colors.greyDark,
     boxShadow: 'none',
-    color: colors.greyDark,
+    color: colors.greyDarker,
   },
   icon: {
     color: colors.grey,

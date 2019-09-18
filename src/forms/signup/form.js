@@ -2,13 +2,7 @@ import React from 'react'
 import { ErrorMessage } from 'formik'
 
 import { Button } from 'UI'
-import { Form } from 'UI/Forms/Forms__OLD/Form'
-import {
-  Input,
-  TextInput as Text,
-  Email,
-  Password,
-} from 'UI/Forms/Forms__OLD/Input'
+import { Form, Email, TextInput as Text, Password } from 'UI'
 
 export const FormComp = props => {
   const {
@@ -18,8 +12,6 @@ export const FormComp = props => {
     handleSubmit,
     isSubmitting,
     isValid,
-    setFieldTouched,
-    touched,
     values,
   } = props
 

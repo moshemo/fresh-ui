@@ -55,11 +55,12 @@ export const SharedCSS = css`
 `
 
 export const DisabledCSS = css`
-  background-color: ${forms.disabled.backgroundColor};
-  border-color: ${forms.disabled.borderColor};
-  box-shadow: ${forms.disabled.boxShadow};
-  color: ${forms.disabled.color};
+  background-color: rgba(0, 0, 0, 0.1);
+  border-color: rgba(99, 99, 99, 0.2);
+  box-shadow: none;
+  color: rgba(0, 0, 0, 0.7);
   cursor: not-allowed;
+  pointer-events: none;
 `
 
 // prettier-ignore

@@ -1,6 +1,4 @@
-import React from 'react'
 import styled from 'styled-components'
-import { FontAwesomeIcon as FaIcon } from 'FontAwesome'
 
 import { colors } from 'Variables'
 
@@ -25,9 +23,3 @@ export const IconBase = styled.span`
       if (large)  { return `height: 3rem; width: 3rem;` } 
   }};
 `
-
-const InputIcon = props => (
-  <IconBase>
-    <FaIcon icon={props.icon} {...props} />
-  </IconBase>
-)

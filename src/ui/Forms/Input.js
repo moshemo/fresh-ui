@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { Field as FormikField } from 'formik'
 import startCase from 'lodash/startCase'
 
@@ -12,7 +12,6 @@ import { Label } from './Label'
 import { InputCSS, SharedCSS } from './Shared'
 
 import { FormContext } from 'Context/FormContext'
-import { forms } from 'Variables'
 
 export const RegInput = styled.input`
   ${SharedCSS};
