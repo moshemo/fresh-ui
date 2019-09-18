@@ -6,10 +6,10 @@ import { Form, Email, TextInput as Text, Password } from 'UI'
 
 export const FormComp = props => {
   const {
-    errors,
+    // errors,
     handleBlur,
     handleChange,
-    handleSubmit,
+    // handleSubmit,
     isSubmitting,
     isValid,
     values,
