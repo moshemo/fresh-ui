@@ -1,6 +1,6 @@
-import Yup from 'yup'
+import * as Yup from 'yup'
 // prettier-ignore
-const validationSchema = Yup.object().shape({
+export const validationSchema = Yup.object().shape({
   name: Yup
     .string('Enter a name')
     .required('Name is required'),

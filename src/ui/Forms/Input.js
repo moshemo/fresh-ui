@@ -5,7 +5,7 @@ import startCase from 'lodash/startCase'
 
 import { Control } from './Control'
 import { Field } from './Field'
-import { Help } from './Help'
+import { ErrorMessage } from './Help'
 import { InputIcon } from './Icon'
 import { Label } from './Label'
 import { InputCSS, SharedCSS } from './Shared'
@@ -76,7 +76,7 @@ export const Input = props => {
         {iconRight && <InputIcon icon={iconRight} side="right" />}
         {addonLeft && <>{addonLeft}</>}
         {addonRight && <>{addonRight}</>}
-        {message && <Help {...pv.message}>{message}</Help>}
+        <ErrorMessage component="div" name={props.name} />
       </Control>
     </Field>
   )

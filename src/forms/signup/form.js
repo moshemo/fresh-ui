@@ -4,50 +4,15 @@ import { ErrorMessage } from 'formik'
 import { Button } from 'UI'
 import { Form, Email, TextInput as Text, Password } from 'UI'
 
-export const FormComp = props => {
-  const {
-    // errors,
-    handleBlur,
-    handleChange,
-    // handleSubmit,
-    isSubmitting,
-    isValid,
-    values,
-  } = props
-
+export const FormFields = ({ isSubmitting, isValid }) => {
+  console.log('isValid: ', isValid)
   return (
-    <Form noLabels>
+    <Form>
       <h3>Sign Up</h3>
-      <Text
-        name="name"
-        placeholder="Enter your name"
-        onBlur={handleBlur}
-        onChange={handleChange}
-        value={values.name}
-      />
-      <ErrorMessage component="p" name="name" />
-      <Email
-        name="email"
-        // placeholder="Enter your Email"
-        onBlur={handleBlur}
-        onChange={handleChange}
-        value={values.email}
-      />
-      <ErrorMessage component="p" name="email" />
-      <Password
-        name="password"
-        onBlur={handleBlur}
-        onChange={handleChange}
-        value={values.password}
-      />
-      <ErrorMessage component="p" name="password" />
-      <Password
-        name="confirmPassword"
-        onBlur={handleBlur}
-        onChange={handleChange}
-        value={values.confirmPassword}
-      />
-      <ErrorMessage component="p" name="confirmPassword" />
+      <Text name="name" />
+      <Email name="email" />
+      <Password name="password" />
+      <Password name="confirmPassword" />
       <Button disabled={!isValid || isSubmitting} type="submit">
         Submit
       </Button>
