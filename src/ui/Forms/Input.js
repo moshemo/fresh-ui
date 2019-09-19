@@ -7,7 +7,6 @@ import { Control } from './Control'
 import { Field } from './Field'
 import { FormikHelp } from './Help'
 import { InputIcon } from './Icon'
-// import { Label as LabelComponent } from './Label'
 import { Label } from './Label'
 import { InputCSS, SharedCSS } from './Shared'
 
