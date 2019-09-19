@@ -10,9 +10,6 @@ class Firebase {
     this.auth = app.auth()
   }
 
-  sayHello() {
-    console.log('hello')
-  }
   async login(email, password) {
     return await this.auth.signInWithEmailAndPassword(email, password)
   }

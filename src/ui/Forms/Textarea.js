@@ -11,5 +11,5 @@ export const Textarea = styled.textarea`
 
   ${({ disabled }) => disabled && `${DisabledCSS}`}
 
-  ${({ fullWidth }) => fullWidth && `grid-column: 1 / -1;`}
+  /* ${({ fullWidth }) => fullWidth && `grid-column: 1 / -1;`} */
 `

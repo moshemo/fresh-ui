@@ -75,7 +75,7 @@ ${({plain}) => plain && `
   :focus { border: none; }
 `}
 
-${({fullWidth}) => fullWidth && `grid-column: 1 / -1;`}
+${'' /* ${({fullWidth}) => fullWidth && `grid-column: 1 / -1;`} */}
 
 ${({error, info, success, warning}) => {
   if      (error)   { return `border-color: ${colors.error}` } 

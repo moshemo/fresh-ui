@@ -47,7 +47,7 @@ export const FormikBase = styled(FormikForm)`
 `
 
 export const Form = props => {
-  const { toggleLabels, toggleFormik, useFormik } = useContext(FormContext)
+  const { toggleLabels, toggleFormik, noFormik } = useContext(FormContext)
 
   useEffect(() => {
     const propKeys = Object.keys(props)
@@ -55,7 +55,7 @@ export const Form = props => {
     toggleFormik(propKeys.includes('formik'))
   }, [props])
 
-  const FormComponent = useFormik ? FormikBase : FormBase
+  const FormComponent = noFormik ? FormBase : FormikBase
 
   return <FormComponent {...props}>{props.children}</FormComponent>
 }

@@ -1,18 +1,29 @@
-import styled from 'styled-components'
-import { color } from 'styled-system'
+import styled, { css } from 'styled-components'
+import { ColorsCSS, SizesCSS } from 'UI'
+
+// prettier-ignore
+export const GridCSS = css`
+  display: grid;
+  ${({ gridColumns }) =>  gridColumns       &&      `grid-template-columns: ${gridColumns};`}
+  ${({ gridRows }) =>     gridRows          &&      `grid-template-rows: ${gridRows};`}
+  ${({ gridAreas }) =>    gridAreas         &&      `grid-template-areas: ${gridAreas};`}
+
+  ${({ gridColumn }) =>  gridColumn       &&      `grid-column: ${gridColumn};`}
+  ${({ gridRow }) =>     gridRow          &&      `grid-row: ${gridRow};`}
+  ${({ gridArea }) =>    gridArea         &&      `grid-area: ${gridArea};`}
+
+  ${({ autoFit }) =>      autoFit           &&      `grid-template-columns: repeat(auto-fit, minmax(${autoFit}, 1fr));`}
+
+  ${({ gridGap }) =>        gridGap         &&      `grid-gap: ${gridGap};`}
+  ${({ gridColumnGap }) =>  gridColumnGap   &&      `grid-column-gap: ${gridColumnGap};`}
+  ${({ gridRowGap }) =>     gridRowGap      &&      `grid-row-gap: ${gridRowGap};`}
+
+  ${gridCenter =>           gridCenter      &&      `justify-items: center; align-content: center;`}
+
+  ${ColorsCSS}
+  ${SizesCSS}
+`
 
 export const Grid = styled.div`
-
-  display: grid;
-  ${props => props.columns && `grid-template-columns: ${props.columns};`}
-  ${props => props.rows && `grid-template-rows: ${props.rows};`}
-  ${props => props.areas && `grid-template-areas: ${props.areas};`}
-  ${props =>
-    props.autoFit &&
-    `grid-template-columns: repeat(auto-fit, minmax(${props.autoFit}, 1fr));`}
-  ${props => props.gap && `grid-gap: ${props.gap};`}
-
-  ${props => props.center && `justify-items: center; align-content: center;`}
-
-  ${color}
+  ${GridCSS}
 `

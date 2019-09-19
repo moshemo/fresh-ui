@@ -5,7 +5,7 @@ import startCase from 'lodash/startCase'
 
 import { Control } from './Control'
 import { Field } from './Field'
-import { Help } from './Help'
+import { FormikHelp } from './Help'
 import { InputIcon } from './Icon'
 // import { Label as LabelComponent } from './Label'
 import { Label } from './Label'
@@ -24,26 +24,18 @@ export const FormikInput = styled(FormikField)`
 `
 
 export const Input = props => {
-  const { addonLeft, addonRight, iconLeft, iconRight, message } = props
+  const { addonLeft, addonRight, authError, iconLeft, iconRight } = props
   const titleCase = startCase(props.name)
-  const { noLabels, useFormik } = useContext(FormContext)
+  const { noLabels, noFormik } = useContext(FormContext)
 
   // Prop Values (pv)
   const pv = {
-    field: {
-      center: props.center,
-      horizontal: props.horizontal,
-      right: props.right,
-    },
     label: {
-      checkbox: props.checkbox,
       htmlFor: props.htmlFor ? props.htmlFor : props.name,
-      horizontal: props.horizontal,
-      radio: props.radio,
     },
     input: {
       id: props.htmlFor ? props.htmlFor : props.name,
-      fullWidth: props.fullWidth,
+      // fullWidth: props.fullWidth,
       placeholder: props.placeholder ? props.placeholder : props.titleCase,
       type: 'text',
       ...props,
@@ -60,7 +52,7 @@ export const Input = props => {
 
   const UseFormikInput = FormikInput
 
-  const InputComponent = useFormik ? UseFormikInput : UseRegInput
+  const InputComponent = noFormik ? UseRegInput : UseFormikInput
   const labelChildren = props.label ? props.label : titleCase
 
   return (
@@ -77,7 +69,8 @@ export const Input = props => {
         {iconRight && <InputIcon icon={iconRight} side="right" />}
         {addonLeft && <>{addonLeft}</>}
         {addonRight && <>{addonRight}</>}
-        {message && <Help {...pv.message}>{message}</Help>}
+        <FormikHelp component="div" name={props.name} />
+        {authError && <p>{authError}</p>}
       </Control>
     </Field>
   )

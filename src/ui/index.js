@@ -18,6 +18,10 @@ export * from './Forms/Input'
 export * from './Forms/Textarea'
 export * from './Forms/Types'
 
+// Helpers
+export * from './Helpers/Colors'
+export * from './Helpers/Sizes'
+
 // Structure
 export * from './Structure/Container'
 export * from './Structure/Divider'

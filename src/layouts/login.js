@@ -10,7 +10,7 @@ export const LoginLayout = ({ children }) => {
 
   return (
     <BaseLayout>
-      <Grid bg={colors.primaryLighter} center style={{ minHeight: '100vh' }}>
+      <Grid minHeight="100vh" gridColumns="1fr 4fr">
         {children}
       </Grid>
     </BaseLayout>
