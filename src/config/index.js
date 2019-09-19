@@ -1,2 +1,2 @@
-export * from './editor-config'
-export * from './firebase-config'
+export * from './editorConfig'
+export * from './firebaseConfig'

@@ -7,7 +7,6 @@ import { Control } from './Control'
 import { Field } from './Field'
 import { Help } from './Help'
 import { InputIcon } from './Icon'
-// import { Label as LabelComponent } from './Label'
 import { Label } from './Label'
 import { InputCSS, SharedCSS } from './Shared'
 
@@ -26,7 +25,7 @@ export const FormikInput = styled(FormikField)`
 export const Input = props => {
   const { addonLeft, addonRight, iconLeft, iconRight, message } = props
   const titleCase = startCase(props.name)
-  const { noLabels, useFormik } = useContext(FormContext)
+  const { noLabels, noFormik } = useContext(FormContext)
 
   // Prop Values (pv)
   const pv = {
@@ -60,7 +59,7 @@ export const Input = props => {
 
   const UseFormikInput = FormikInput
 
-  const InputComponent = useFormik ? UseFormikInput : UseRegInput
+  const InputComponent = noFormik ? UseRegInput : UseFormikInput
   const labelChildren = props.label ? props.label : titleCase
 
   return (

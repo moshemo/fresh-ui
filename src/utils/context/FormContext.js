@@ -4,14 +4,14 @@ export const FormContext = createContext()
 
 export const FormProvider = ({ children }) => {
   const [noLabels, setNoLabels] = useState(false)
-  const [useFormik, setUseFormik] = useState(false)
+  const [noFormik, setNoFormik] = useState(false)
 
   const toggleLabels = prop => setNoLabels({ noLabels: prop })
-  const toggleFormik = prop => setUseFormik({ useFormik: prop })
+  const toggleFormik = prop => setNoFormik({ noFormik: prop })
 
   return (
     <FormContext.Provider
-      value={{ ...noLabels, ...useFormik, toggleLabels, toggleFormik }}
+      value={{ ...noLabels, ...noFormik, toggleLabels, toggleFormik }}
     >
       {children}
     </FormContext.Provider>

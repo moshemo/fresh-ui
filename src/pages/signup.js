@@ -44,7 +44,7 @@ const SignUpPage4 = () => {
     try {
       await firebase.register(signUpName, signUpEmail, signUpPassword)
     } catch (error) {
-      console.log('Authentication erroror: ', error)
+      console.log('Authentication error: ', error)
       setAuthError(error.message)
     }
   }

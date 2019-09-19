@@ -1,1 +1,1 @@
-export * from './firebase-class'
+export * from './firebaseClass'
