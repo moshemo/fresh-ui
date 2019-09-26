@@ -20,7 +20,7 @@ export const SharedCSS = css`
 
   height: ${forms.input.height};
   padding: ${forms.input.padding};
-  width: ${forms.input.width};
+  width: 100%;
 
   [type='email'],
   [type='number'],

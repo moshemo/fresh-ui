@@ -1,12 +1,19 @@
 import { material } from './helpers/material-colors'
 
-// Breakpoints
+/* ---------------------------
+--- Breakpoints (unit: px) ---
+---------------------------- */
+
+// The container horizontal gap, which acts as the offset for breakpoints
+const breakpointGap = 32
+
+// 960, 1152, and 1344 have been chosen because they are divisible by both 12 and 16
 export const breakpoints = {
   xs: 0,
-  sm: '576px',
-  md: '768px',
-  lg: '992px',
-  xl: '1200px',
+  tablet: 769,
+  desktop: 960 + 2 * breakpointGap,
+  widescreen: 1152 + 2 * breakpointGap,
+  fullhd: 1344 + 2 * breakpointGap,
 }
 
 // Colors
@@ -36,11 +43,11 @@ export const colors = {
   secondaryDark: material.purple.m700,
   secondaryDarker: material.purple.m800,
 
-  tertiaryLighter: material.yellow.m100,
+  tertiaryLighter: material.yellow.m50,
   tertiaryLight: material.yellow.m200,
   tertiary: material.yellow.m300,
   tertiaryDark: material.yellow.m500,
-  tertiaryDarker: material.yellow.m600,
+  tertiaryDarker: material.yellow.m700,
 
   accentLight: material.orange.a200,
   accent: material.orange.a400,
@@ -169,7 +176,7 @@ export const forms = {
     color: colors.greyDarker,
   },
   icon: {
-    color: colors.grey,
+    color: colors.greyLight,
   },
   input: {
     backgroundColor: colors.white,
@@ -179,9 +186,9 @@ export const forms = {
     fontSize: '16px',
     height: '36px',
     marginBottom: '18px',
-    padding: '6px 10px',
+    padding: '7px 10px 6px',
     focusBorder: `1px solid ${colors.secondaryLight}`,
-    width: '100%',
+    width: '300px',
   },
   textarea: {
     minHeight: '120px',

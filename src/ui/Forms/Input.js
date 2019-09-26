@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-import { Field as FormikField } from 'formik'
+import { Field as FormikField, connect, getIn } from 'formik'
 import startCase from 'lodash/startCase'
 
 import { Control } from './Control'
@@ -23,7 +23,14 @@ export const FormikInput = styled(FormikField)`
 `
 
 export const Input = props => {
-  const { addonLeft, addonRight, authError, iconLeft, iconRight } = props
+  const {
+    addonLeft,
+    addonRight,
+    iconLeft,
+    iconRight,
+    placeholder,
+    width,
+  } = props
   const titleCase = startCase(props.name)
   const { noLabels, noFormik } = useContext(FormContext)
 
@@ -35,7 +42,7 @@ export const Input = props => {
     input: {
       id: props.htmlFor ? props.htmlFor : props.name,
       // fullWidth: props.fullWidth,
-      placeholder: props.placeholder ? props.placeholder : props.titleCase,
+      placeholder: placeholder ? placeholder : titleCase,
       type: 'text',
       ...props,
     },
@@ -55,7 +62,7 @@ export const Input = props => {
   const labelChildren = props.label ? props.label : titleCase
 
   return (
-    <Field {...pv.field}>
+    <Field {...pv.field} width={width}>
       {!noLabels && <Label {...pv.label}>{labelChildren}</Label>}
       <Control
         addonLeft={addonLeft}
@@ -69,7 +76,6 @@ export const Input = props => {
         {addonLeft && <>{addonLeft}</>}
         {addonRight && <>{addonRight}</>}
         <FormikHelp component="div" name={props.name} />
-        {authError && <p>{authError}</p>}
       </Control>
     </Field>
   )

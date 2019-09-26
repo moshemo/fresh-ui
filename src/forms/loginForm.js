@@ -1,71 +1,73 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { navigate } from 'gatsby'
-import { Formik } from 'formik'
+import { Formik, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 
-// import { FormSetup as Form } from './form'
-
 import { firebase } from 'Classes'
-import { Form, Button, Email, Password, TextInput as Text } from 'UI'
+import { Box, Form, Button, Email, Help, Password, TextInput as Text } from 'UI'
 
 export const LoginForm = () => {
-  const [authError, setAuthError] = useState(null)
-
-  async function authenticateUser(values) {
+  async function authenticateUser(setFieldError, values) {
     const { email, password } = values
 
     try {
       await firebase.login(email, password)
-      navigate('/news', { replace: true })
+      navigate('/', { replace: true })
     } catch (error) {
       console.log('Authentication Error: ', error)
-      setAuthError(error.message)
+      await setFieldError('firebaseErrorMessage', error.message)
     }
   }
 
   return (
     <>
-      <h1>Form</h1>
       <Formik
-        render={({ isSubmitting, isValid }) => (
-          <Form>
-            <h3>Sign Up</h3>
-            <Text name="name" />
-            <Email name="email" />
-            <Password name="password" />
-            <Password name="confirmPassword" />
-            {authError && <p>{authError}</p>}
-            <Button disabled={!isValid || isSubmitting} type="submit">
-              Submit
-            </Button>
-          </Form>
-        )}
+        render={props => <RenderForm {...props} />}
+        // render={props => {
+        //   console.log('Props: ', props)
+        //   return <RenderForm {...props} />
+        // }}
         initialValues={initialValues}
         validationSchema={validationSchema}
-        onSubmit={async (values, { setSubmitting, resetForm }) => {
+        onSubmit={async (
+          values,
+          { setFieldError, setSubmitting, resetForm }
+        ) => {
           setSubmitting(true)
-          await authenticateUser(values)
-          resetForm()
+          authenticateUser(setFieldError, values)
           setSubmitting(false)
+          resetForm()
         }}
       />
     </>
   )
 }
 
-const RenderForm = ({ isSubmitting, isValid }) => (
-  <Form>
-    <h3>Sign Up</h3>
-    <Text name="name" />
-    <Email name="email" />
-    <Password name="password" />
-    <Password name="confirmPassword" />
-    {authError && <p>{authError}</p>}
-    <Button disabled={!isValid || isSubmitting} type="submit">
-      Submit
-    </Button>
-  </Form>
-)
+const RenderForm = ({ errors, isSubmitting, isValid, touched }) => {
+  return (
+    <Form noLabels>
+      <Email
+        iconLeft="envelope"
+        name="email"
+        error={touched.email && errors.email ? true : null}
+      />
+      <Password
+        iconLeft="lock"
+        name="password"
+        error={touched.password && errors.password ? true : null}
+      />
+      <Button disabled={!isValid || isSubmitting} type="submit">
+        Login
+      </Button>
+      <Button as="a" to="/forgot">
+        Forgot Password
+      </Button>
+      {errors.firebaseErrorMessage && (
+        <Help>{errors.firebaseErrorMessage}</Help>
+      )}
+    </Form>
+  )
+}
 
 const initialValues = {
   email: '',

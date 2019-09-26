@@ -2,21 +2,21 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { BaseLayout } from './base'
-import { Grid } from 'UI'
+import { Box, Grid, Content, Sidebar } from 'UI'
 import { colors } from 'Variables'
 
-export const LoginLayout = ({ children }) => {
+export const AuthLayout = ({ children, sidebar }) => {
   // const { title } = MetaData()
 
   return (
     <BaseLayout>
-      <Grid minHeight="100vh" gridColumns="1fr 4fr">
-        {children}
+      <Grid center bg={colors.tertiaryLighter} minHeight="100vh">
+        <Box style={{ padding: '30px' }}>{children}</Box>
       </Grid>
     </BaseLayout>
   )
 }
 
-LoginLayout.propTypes = {
+AuthLayout.propTypes = {
   children: PropTypes.node.isRequired,
 }

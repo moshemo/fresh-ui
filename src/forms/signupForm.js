@@ -1,22 +1,20 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
 
 // import { FormSetup as Form } from './form'
 
 import { firebase } from 'Classes'
-import { Form, Button, Email, Password, TextInput as Text } from 'UI'
+import { Form, Button, Email, Help, Password, TextInput as Text } from 'UI'
 
 export const SignUpForm = () => {
-  const [authError, setAuthError] = useState(null)
-
-  async function authenticateUser(values) {
+  async function authenticateUser(setFieldError, values) {
     const { name, email, password } = values
     try {
       await firebase.register(name, email, password)
     } catch (error) {
       console.log('Authentication error: ', error)
-      setAuthError(error.message)
+      setFieldError('firebaseErrorMessage', error.message)
     }
   }
 
@@ -24,12 +22,15 @@ export const SignUpForm = () => {
     <>
       <h1>Form</h1>
       <Formik
-        render={<RenderForm />}
+        render={props => <RenderForm {...props} />}
         initialValues={initialValues}
         validationSchema={validationSchema}
-        onSubmit={async (values, { setSubmitting, resetForm }) => {
+        onSubmit={async (
+          values,
+          { setFieldError, setSubmitting, resetForm }
+        ) => {
           setSubmitting(true)
-          await authenticateUser(values)
+          await authenticateUser(setFieldError, values)
           resetForm()
           setSubmitting(false)
         }}
@@ -38,15 +39,17 @@ export const SignUpForm = () => {
   )
 }
 
-const RenderForm = ({ isSubmitting, isValid }) => (
+const RenderForm = ({ errors, isSubmitting, isValid }) => (
   <Form>
     <h3>Sign Up</h3>
     <Text name="name" />
     <Email name="email" />
     <Password name="password" />
     <Password name="confirmPassword" />
-    {authError && <p>{authError}</p>}
     <Button disabled={!isValid || isSubmitting} type="submit">
+      {errors.firebaseErrorMessage && (
+        <Help>{errors.firebaseErrorMessage}</Help>
+      )}
       Submit
     </Button>
   </Form>

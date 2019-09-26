@@ -5,6 +5,7 @@ export * from './Components/Nav'
 
 // Elements
 export * from './Elements/Misc/Avatar'
+export * from './Elements/Box'
 export * from './Elements/Button'
 export * from './Elements/Icon'
 export * from './Elements/Misc/Logo'
@@ -14,6 +15,7 @@ export * from './Elements/Video'
 // Forms
 export * from './Forms/Form'
 export * from './Forms/Group'
+export * from './Forms/Help'
 export * from './Forms/Input'
 export * from './Forms/Textarea'
 export * from './Forms/Types'

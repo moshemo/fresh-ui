@@ -1,4 +1,4 @@
 export * from './base'
 export * from './inner'
-export * from './login'
+export * from './auth'
 export * from './main'

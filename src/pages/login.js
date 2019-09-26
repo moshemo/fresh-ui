@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { firebase } from 'Classes'
 import { LoginForm } from 'Forms'
 import { useForms } from 'Hooks'
-import { LoginLayout } from 'Layouts'
+import { AuthLayout } from 'Layouts'
 import { Button, Flex, NavBase, NavLink } from 'UI'
 
 const INITIAL_VALUES = {
@@ -13,12 +13,19 @@ const INITIAL_VALUES = {
 
 const LogInPage = () => {
   return (
-    <LoginLayout>
-      <LoginForm />
+    <AuthLayout>
+      <>
+        <h4>Logo</h4>
+        <span>Login</span>
+        <span>Register</span>
+        <LoginForm />
+      </>
+
       <NavBase>
-        <NavLink to="/forgot">Forgot password?</NavLink>
+        <span>Don't have an account?</span>
+        <NavLink to="/signup">Sign Up</NavLink>
       </NavBase>
-    </LoginLayout>
+    </AuthLayout>
   )
 }
 

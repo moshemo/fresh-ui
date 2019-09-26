@@ -27,3 +27,11 @@ export const GridCSS = css`
 export const Grid = styled.div`
   ${GridCSS}
 `
+
+export const Content = styled.div`
+  grid-area: ${({ gridArea }) => (gridArea ? gridArea : 'content')};
+`
+
+export const Sidebar = styled.div`
+  grid-area: ${({ gridArea }) => (gridArea ? gridArea : 'sidebar')};
+`
